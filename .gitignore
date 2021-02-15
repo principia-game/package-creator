@@ -1,0 +1,3 @@
+*.ppkg
+1.json
+__pycache__/
