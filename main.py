@@ -24,7 +24,7 @@ def main(filename, outfile):
 		f.write(data['name'].encode())					# name
 		f.write(b'\x00' * (255 - len(data['name'])))	# 	(name padding)
 		f.write(u8(data['levels_unlocked']))			# levels_unlocked
-		f.write(u8(data['unknown_798b9a']))				# unknown_798b9a
+		f.write(u8(data['level_behavior']))				# level_behavior
 		f.write(u8(data['unknown_8fe981']))				# unknown_8fe981
 		f.write(u8(len(data['levels'])))				# levels
 		for level in data['levels']:
