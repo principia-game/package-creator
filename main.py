@@ -19,16 +19,19 @@ def main(filename, outfile):
 	data = json.loads(open(Path(filename), "r").read())
 
 	with open(outfile, 'wb+') as f:
+		# for more info about the package format and values, please see ppkg.ksy
+
 		f.write(u8(3))									# version
-		f.write(u32(data['unknown_e621ad']))			# unknown_e621ad
+		f.write(u32(data['community_id']))				# community_id
 		f.write(data['name'].encode())					# name
 		f.write(b'\x00' * (255 - len(data['name'])))	# 	(name padding)
 		f.write(u8(data['levels_unlocked']))			# levels_unlocked
-		f.write(u8(data['level_behavior']))				# level_behavior
-		f.write(u8(data['unknown_8fe981']))				# unknown_8fe981
+		f.write(u8(data['first_is_menu']))				# first_is_menu
+		f.write(u8(data['return_on_finish']))			# return_on_finish
 		f.write(u8(len(data['levels'])))				# levels
 		for level in data['levels']:
 			f.write(u32(level))							# level_id
+
 
 if __name__ == "__main__":
 	if len(sys.argv) < 3:

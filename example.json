@@ -1,9 +1,9 @@
 {
 	"name": "Test Package",
-	"unknown_e621ad": 0,
+	"community_id": 0,
 	"levels_unlocked": 2,
-	"level_behavior": 0,
-	"unknown_8fe981": 0,
+	"first_is_menu": 0,
+	"return_on_finish": 0,
 	"levels": [
 		77,
 		78,
